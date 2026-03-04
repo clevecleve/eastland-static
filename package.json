@@ -4,8 +4,8 @@
   "description": "Static snapshot of https://eastland.qicre.com for Netlify deployment",
   "private": true,
   "scripts": {
-    "crawl": "node crawl.js",
-    "postprocess": "node postprocess.js",
+    "crawl": "CRAWL_ORIGIN=https://eastland.qicre.com CRAWL_OUT_DIR=$(pwd)/dist node ../qicre-static/crawl-generic.js",
+    "postprocess": "CRAWL_ORIGIN=https://eastland.qicre.com CRAWL_OUT_DIR=$(pwd)/dist node ../qicre-static/postprocess-generic.js",
     "serve": "npx serve dist -p 3456",
     "build": "npm run crawl && npm run postprocess"
   },
