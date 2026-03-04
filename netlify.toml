@@ -1,0 +1,16 @@
+[build]
+  publish = "dist"
+  # No build command — dist/ is pre-built locally and committed.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+
+# Allow Mappedin iframe to load from its own origin
+[[headers]]
+  for = "/Map*"
+  [headers.values]
+    X-Frame-Options = "ALLOWALL"

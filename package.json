@@ -1,0 +1,16 @@
+{
+  "name": "eastlands-static",
+  "version": "1.0.0",
+  "description": "Static snapshot of https://eastland.qicre.com for Netlify deployment",
+  "private": true,
+  "scripts": {
+    "crawl": "node crawl.js",
+    "postprocess": "node postprocess.js",
+    "serve": "npx serve dist -p 3456",
+    "build": "npm run crawl && npm run postprocess"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "playwright": "^1.40.0"
+  }
+}
